@@ -13,7 +13,10 @@ def emotion_detector_api():
     if not text_to_analyze:
         return "Error : No Text provided. Please enter a valid statement."
 
-        
+    # If dominant emotion is None, return an error message
+    if response["dominant_emotion"] is None:
+         return "Invalid text! Please try again."
+           
 
      # Call the emotion detection function
     response = emotion_detector(text_to_analyze)
